@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import { AppRegistry, Image, View } from 'react-native';
+import React, {Component} from 'react';
+import { AppRegistry, View } from 'react-native';
 
-class AwesomePicture extends Component {
-  render() {
-    let pic = {
-      uri: this.props.uri
+class JustifyContentBasics extends Component {
+    render() {
+        return (
+            <View style={{
+                flex: 1,
+                flexDirection: 'row'
+                /*justifyContent: 'space-between'*/
+            }}>
+                <View style={{flex: 1, height: 40, backgroundColor: 'powderblue'}} />
+                <View style={{flex: 1, height: 80, backgroundColor: 'skyblue'}} />
+                <View style={{flex: 1, height: 120, backgroundColor: 'steelblue'}} />
+                <View style={{flex: 1, height: 80, backgroundColor: 'skyblue'}} />
+                <View style={{flex: 1, height: 40, backgroundColor: 'powderblue'}} />
+            </View>
+        );
     }
-    return (
-        <Image source={pic} style={{width: 193, height: 110}}/>
-    );
-  }
-}
+};
 
-class LotsOfPictures extends Component {
-  render(){
-    return(
-        <View style={{alignItems: 'center'}}>
-          <AwesomePicture uri='https://unsplash.it/200/300/?random'/>
-          <AwesomePicture uri='https://unsplash.it/200/400/?random'/>
-          <AwesomePicture uri='https://unsplash.it/200/500/?random'/>
-        </View>
-    );
-  }
-}
-
-AppRegistry.registerComponent('learnReactNative', () => LotsOfPictures);
+AppRegistry.registerComponent('learnReactNative', () => JustifyContentBasics)
